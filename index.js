@@ -3,13 +3,16 @@ const app = express()
 const request = require('request')
 const { PORT, KEY } = require('./secret')
 
+// middlewares
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+// render html file
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
+// subsribe endpoint
 app.post('/subscribe', (req,res) => {
     const { captcha } = req.body
     if(captcha === '' || captcha === undefined || captcha === null) {
