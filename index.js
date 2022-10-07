@@ -33,7 +33,7 @@ app.post('/subscribe', (req,res) => {
 
 })
 
-app.listen(PORT, (err) => {
+app.listen(process.env.PORT || 3000, (err) => {
     if(err) throw err
-    console.log(`Running on port ${PORT}`)
+    console.log(`Running on port ${process.env.PORT || 3000}`)
 })
