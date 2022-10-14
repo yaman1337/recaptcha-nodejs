@@ -33,7 +33,6 @@ app.post('/subscribe', (req, res) => {
 	})
 })
 
-app.listen(listenPORT, err => {
-	if (err) throw err
+app.listen(listenPORT, () => {
 	console.log(`Running on port ${listenPORT}`)
 })
